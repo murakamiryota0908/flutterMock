@@ -5,7 +5,7 @@ class firstpage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text("ページ(1)")),
+        appBar: AppBar(title: Text("シフト管理画面")),
         body: Center(
           child: TextButton(
             child: Text("secondページに遷移する"),
