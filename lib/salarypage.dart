@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 
-class thirdpage extends StatelessWidget {
+class salarypage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text("ページ(3)")),
+        appBar: AppBar(title: Text("ページ(2)")),
         body: Center(
           child: TextButton(
-            child: Text("最初のページに戻る"),
+            child: Text("thirdページへ遷移する"),
             // （1） 前の画面に戻る
             onPressed: () {
-              Navigator.popUntil(context, (route) => route.isFirst);
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => thirdpage()));
             },
           ),
         ));
