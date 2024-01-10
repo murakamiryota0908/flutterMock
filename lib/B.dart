@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'secondpage.dart';
+import 'homepage.dart';
 
 class Apage extends StatelessWidget {
   @override
@@ -11,8 +11,8 @@ class Apage extends StatelessWidget {
             child: Text("ページに遷移する"),
             // （1） 前の画面に戻る
             onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => secondpage()));
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => homepage()));
             },
           ),
         ));

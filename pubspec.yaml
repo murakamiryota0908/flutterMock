@@ -32,7 +32,8 @@ dependencies:
     sdk: flutter
   # 2023.11.08.murakami:スプラッシュ画面パッケージ追加
   flutter_native_splash: ^2.2.16
-
+  table_calendar: ^3.0.9
+  
 flutter_native_splash:
   color: '#add8e6'
   image: 'assets/images/splash.png'
