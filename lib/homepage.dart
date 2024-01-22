@@ -16,22 +16,25 @@ class homepage extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              OutlinedButton(
-                child: Text('シフト管理'),
+              ElevatedButton.icon(
+                label: Text('シフト管理'),
+                icon: Icon(Icons.calendar_month),
                 onPressed: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => shiftpage()));
                 },
               ),
-              OutlinedButton(
-                child: Text('給与管理'),
+              ElevatedButton.icon(
+                label: Text('給与管理'),
+                icon: Icon(Icons.attach_money),
                 onPressed: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => salarypage()));
                 },
               ),
-              OutlinedButton(
-                child: Text('仕事のメモ'),
+              ElevatedButton.icon(
+                label: Text('仕事のメモ'),
+                icon: Icon(Icons.edit_note),
                 onPressed: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => memopage()));
