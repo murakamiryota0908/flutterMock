@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/homepage.dart';
 
 class memopage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       // アプリ名
-      title: 'My Todo App',
+      title: 'Work Management App',
       theme: ThemeData(
-        // テーマカラー
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
       ),
       // リスト一覧画面を表示
       home: TodoListPage(),
+      darkTheme: ThemeData.dark(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
@@ -33,7 +35,22 @@ class _TodoListPageState extends State<TodoListPage> {
       // AppBarを表示し、タイトルも設定
       appBar: AppBar(
         title: Text('仕事のメモ'),
-        automaticallyImplyLeading: true,
+        leading: TextButton(
+          child: Text(
+            '←',
+            style: TextStyle(
+              color: Colors.white, //文字の色を白にする
+              fontWeight: FontWeight.bold, //文字を太字する
+              fontSize: 20.0, //文字のサイズを調整する
+            ),
+          ),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => homepage()),
+            );
+          },
+        ),
       ),
       // データを元にListViewを作成
       body: ListView.builder(
@@ -138,22 +155,5 @@ class _TodoAddPageState extends State<TodoAddPage> {
         ),
       ),
     );
-  }
-}
-
-class backs extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(title: Text("メモ")),
-        body: Center(
-          child: TextButton(
-            child: Text("ホーム画面に戻る"),
-            // ホーム画面に戻る
-            onPressed: () {
-              Navigator.popUntil(context, (route) => route.isFirst);
-            },
-          ),
-        ));
   }
 }

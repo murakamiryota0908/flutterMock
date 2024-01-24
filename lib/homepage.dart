@@ -19,6 +19,9 @@ class homepage extends StatelessWidget {
               ElevatedButton.icon(
                 label: Text('シフト管理'),
                 icon: Icon(Icons.calendar_month),
+                style: ElevatedButton.styleFrom(
+                    primary: Colors.black, //ボタンの背景色
+                    minimumSize: Size(200, 100)),
                 onPressed: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => shiftpage()));
@@ -27,6 +30,9 @@ class homepage extends StatelessWidget {
               ElevatedButton.icon(
                 label: Text('給与管理'),
                 icon: Icon(Icons.attach_money),
+                style: ElevatedButton.styleFrom(
+                    primary: Colors.black, //ボタンの背景色
+                    minimumSize: Size(200, 100)),
                 onPressed: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => salarypage()));
@@ -35,6 +41,9 @@ class homepage extends StatelessWidget {
               ElevatedButton.icon(
                 label: Text('仕事のメモ'),
                 icon: Icon(Icons.edit_note),
+                style: ElevatedButton.styleFrom(
+                    primary: Colors.black, //ボタンの背景色
+                    minimumSize: Size(200, 100)),
                 onPressed: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => memopage()));
@@ -43,6 +52,27 @@ class homepage extends StatelessWidget {
             ],
           ),
         ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.attach_money),
+            label: 'Money',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.calendar_month),
+            label: 'schedule',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.edit_note),
+            label: 'Note',
+          ),
+        ],
+        type: BottomNavigationBarType.fixed,
       ),
     );
   }
